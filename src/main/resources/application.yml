@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/wang_jian_jie?characterEncoding=utf-8&useSSL=false&&serverTimezone=UTC
+    #    1、serverTimezone是配置时间区域，不然启动会报错
+    #    2、url 配置规则 jdbc:mysql:// + ip地址 + 端口 / 数据库名字 ? 字符编码 && 是否使用SSL && 时间区域
+    #    3、useSSL MySQL在高版本需要指明是否进行SSL连接
+    Hikari:
+      # 最小连接数量
+      minimum-idle: 5
+      #空闲连接最大存活时间，默认600000（10分钟）
+      idle-timeout: 180000
+      #连接池最大连接数，默认为10
+      maximum-pool-size: 10
+      #自动提交从池中返回的连接，默认为、true
+      auto-commit: true
+      #连接池自定义名字
+      pool-name: JianJieHikari
+      #池中连接最长生命周期
+      max-lifetime: 180000
+      #数据库连接超时时间，若小于250毫秒，则被重置为30000
+      connection-timeout: 30000
+
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  typeAliasesPackage: com.example.mybatisdemo.entity
+  global-config:
+    # 不显示banner
+    banner: false
+    # 数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: UUID
+  configuration:
+    call-setters-on-nulls: true
+
+
+
+
+
+server:
+  port: 8098
+wjj:
+  name: 王健杰
