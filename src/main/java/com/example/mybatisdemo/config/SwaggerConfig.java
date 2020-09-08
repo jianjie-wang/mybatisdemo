@@ -35,7 +35,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder().title("Swagger2-UI")
                 .description("mybatis-plus项目Api文档服务")
                 .termsOfServiceUrl("http://swagger.io/")
-                .contact(new Contact("小二", "https://blog.csdn.net/weixin_42422694", "398971654@qq.com"))
+                .contact(new Contact("jian", "https://github.com/jianjie-wang/mybatisdemo", "398971654@qq.com"))
                 .version("1.0")
                 .build();
     }
