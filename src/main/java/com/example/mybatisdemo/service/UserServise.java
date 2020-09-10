@@ -1,6 +1,6 @@
 package com.example.mybatisdemo.service;
 
-import org.mapstruct.Mapper;
+import org.springframework.stereotype.Service;
 
 /**
  * @program: mybatisdemo
@@ -8,6 +8,6 @@ import org.mapstruct.Mapper;
  * @author: WangJJ
  * @create: 2020-09-10 13:40
  **/
-@Mapper
+@Service
 public class UserServise {
 }
